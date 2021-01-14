@@ -202,12 +202,16 @@ const input = `1632
 1507`
 
 const numbers: number[] = map(split(input, '\n'), (e) => parseInt(e)) as number[];
-console.log(numbers);
 
 for (let x of numbers) {
     for (let y of numbers) {
         if (x + y === 2020) {
-            console.log('result is', x * y);
+            console.log('result for 2 is', x * y);
+        }
+        for (let z of numbers) {
+            if (x + y + z === 2020) {
+                console.log('result for 3 is', x * y * z);
+            }
         }
     }
 }
